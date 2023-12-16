@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        function compareInputs() {
+            var firstInput = parseFloat(document.getElementById('firstInput').value);
+            var secondInput = parseFloat(document.getElementById('secondInput').value);
+            var resultDiv = document.getElementById('result');
+
+            if (firstInput > secondInput) {
+                document.body.style.backgroundColor = 'lightblue';
+                resultDiv.innerHTML = firstInput + ' > ' + secondInput;
+            } else if (secondInput > firstInput) {
+                document.body.style.backgroundColor = 'orange';
+                resultDiv.innerHTML = secondInput + ' > ' + firstInput;
+            } else {
+                document.body.style.backgroundColor = 'lightyellow';
+                resultDiv.innerHTML = secondInput + ' == ' + firstInput;
+            }
+        }
+
+        function showFirstInput() {
+            var firstInput = parseFloat(document.getElementById('firstInput').value);
+            alert('First Input: ' + firstInput);
+        }
+
+        function showSecondInput() {
+            var secondInput = parseFloat(document.getElementById('secondInput').value);
+            alert('Second Input: ' + secondInput);
+        }
+    </script>
+</head>
+<body>
+    <label>1st Input:</label>
+    <input type="number" id="firstInput">
+    <br>
+    <label>2nd Input:</label>
+    <input type="number" id="secondInput">
+    <br>
+    <button onclick="compareInputs()">Compare Inputs</button>
+    <button onclick="showFirstInput()">Show 1st Input</button>
+    <button onclick="showSecondInput()">Show 2nd Input</button>
+    <div id="result"></div>
+</body>
+</html>
